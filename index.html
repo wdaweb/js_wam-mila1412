@@ -5,205 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
   <title>Document</title>
-  <style>
-    /* 計分表設計、borderwidth問題 */
-
-
-    body {
-      background-image: url(./images/背景4.jpg);
-      background-repeat: no-repeat;
-      background-position: left top;
-      background-size: cover;
-      overflow: hidden;
-    }
-
-    #container {
-      cursor: url(./images/木槌.png) 50 50, auto;
-      /* background: cadetblue; */
-      position: absolute;
-      top: 10%;
-      /* border-left-width: 200px; */
-      width: 100%;
-      height: 100%;
-    }
-
-    table {
-      /* position: absolute; */
-      padding-left: 700px;
-      height: 90%;
-      width: 100%;
-    }
-
-    .holes {
-      /* background: wheat; */
-      position: relative;
-    }
-
-    .bomb {
-      width: 100px;
-      float: right;
-      position: relative;
-    }
-
-    .bomb img {
-      width: 100%;
-    }
-
-    .bomb span {
-      font-size: 40px;
-      color: white;
-      position: absolute;
-      top: 37%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .zombie1 {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-image: url(./images/報紙.gif);
-      background-size: 213px 195px;
-    }
-
-    .zombie11 {
-      animation: zombie11 30s forwards;
-    }
-
-
-    @keyframes zombie11 {
-      from {
-
-        left: 0%
-      }
-
-      to {
-
-        left: -120%;
-      }
-    }
-
-    .zombie2 {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-image: url(./images/三角錐.gif);
-      background-size: 262px 331px;
-    }
-
-    .zombie22 {
-      animation: zombie22 30s forwards;
-    }
-
-    @keyframes zombie22 {
-      from {
-
-        left: 0%
-      }
-
-      to {
-
-        left: -90%;
-      }
-    }
-
-    .zombie3 {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-image: url(./images/小人.gif);
-      background-size: 207px 250px;
-    }
-
-    .zombie33 {
-      animation: zombie33 30s forwards;
-    }
-
-    @keyframes zombie33 {
-      from {
-        left: 0%
-      }
-
-      to {
-        left: -100%;
-      }
-    }
-
-    .zombie4 {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-image: url(./images/巨人.gif);
-      background-size: 171px 315px;
-    }
-
-    .zombie44 {
-      animation: zombie44 30s forwards;
-    }
-
-    @keyframes zombie44 {
-      from {
-        left: 0%
-      }
-
-      to {
-        left: -90%;
-      }
-    }
-
-    .zombie5 {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-image: url(./images/氣球.gif);
-      background-size: 272px 333px;
-      animation: zombie5 30s forwards infinite;
-    }
-
-    @keyframes zombie5 {
-      from {
-        transform: translateY(0);
-      }
-
-      to {
-        transform: translateY(-1000px);
-      }
-    }
-
-    .sun {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-image: url(./images/sun.png);
-      background-size: 50px 50px;
-      animation: sun 1s forwards;
-    }
-
-    .pow {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-image: url(./images/POW.png);
-      background-size: 50px 50px;
-      animation: sun 1s forwards;
-    }
-
-    @keyframes sun {
-      from {
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      to {
-        transform: translateY(-30px);
-        opacity: 0;
-      }
-    }
-  </style>
 </head>
 
 <body>
-
   <div class="bomb">
     <img src="./images/bomb.png">
     <span id="text-countdown"></span>
   </div>
-
-
 
   <div id="container">
     <table>
@@ -246,16 +58,20 @@
     </table>
   </div>
 
-
   <input type="button" value="Start" id="btn-start">
   <br>
-  目前分數: <span id="text-score"></span>
   <br>
-  最高紀錄:
-  <br>
-  玩家: <span id="highscore-player">-</span>
-  <br>
-  分數: <span id="highscore-score">-</span>
+  <span id="header">
+    <img src="./images/sun.png" width="25px">目前分數: <span id="text-score"></span>
+    <br>
+    <img src="./images/head.png" width="25px">最高紀錄:
+    <br>
+    <img src="./images/head.png" width="25px">玩家: <span id="highscore-player">-</span>
+    <br>
+    <img src="./images/head.png" width="25px">分數: <span id="highscore-score">-</span>
+  </span>
+  <img src="./images/食人花.gif" id="flower">
+
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script>
@@ -300,32 +116,25 @@
     }
 
     const game = () => {
-
-
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 4; i++) {
         const random = Math.floor(Math.random() * 28)
         holes[random].classList.add('zombie1')
         holes[random].classList.add('zombie11')
-
       }
-
       for (let i = 0; i < 3; i++) {
         const random = Math.floor(Math.random() * 28)
         holes[random].classList.add('zombie2')
         holes[random].classList.add('zombie22')
-
       }
       for (let i = 0; i < 4; i++) {
         const random = Math.floor(Math.random() * 28)
         holes[random].classList.add('zombie3')
         holes[random].classList.add('zombie33')
-
       }
       for (let i = 0; i < 3; i++) {
         const random = Math.floor(Math.random() * 28)
         holes[random].classList.add('zombie4')
         holes[random].classList.add('zombie44')
-
       }
       for (let i = 0; i < 3; i++) {
         const random = Math.floor(Math.random() * 28)
@@ -338,7 +147,6 @@
         // container.style.borderLeftWidth 抓不到?
         // 改成百分比比較好
         if (hole.offsetLeft == 300) {
-
           clearInterval(timer)
           clearInterval(timer2)
           clearInterval(timer3)
@@ -357,7 +165,6 @@
             hole.classList.remove('zombie22')
             hole.classList.remove('zombie33')
             hole.classList.remove('zombie44')
-
           }
         }
       }
@@ -403,19 +210,18 @@
     }
 
 
-
     for (let hole of holes) {
       hole.onmousedown = () => {
+        container.style.cursor = 'url(./images/木槌2.png) 50 50, auto'
         // 清除太陽才不會佔到殭屍的格子
         setTimeout(() => {
           hole.classList.remove('sun')
         }, 1000);
-        container.style.cursor = 'url(./images/木槌2.png) 50 50, auto'
+
         if (hole.classList.contains('zombie1')) {
           hole.classList.replace('zombie1', 'sun')
           hole.classList.remove('zombie11')
           score++
-
         } else if (hole.classList.contains('zombie2')) {
           hole.classList.replace('zombie2', 'sun')
           hole.classList.remove('zombie22')

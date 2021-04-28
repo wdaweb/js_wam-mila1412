@@ -1,0 +1,200 @@
+body {
+  font-family: 'New Tegomin', serif;
+  background-image: url(./images/背景4.jpg);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+  background-attachment: fixed;
+  /* 螢幕縮小圖也是滿版 */
+  height: 100vh;
+}
+
+#container {
+  cursor: url(./images/木槌.png) 50 50, auto;
+  /* background: cadetblue; */
+  position: absolute;
+  top: 10%;
+  /* border-left-width: 200px; */
+  width: 100%;
+  height: 100%;
+}
+
+table {
+  /* position: absolute; */
+  padding-left: 700px;
+  height: 90%;
+  width: 100%;
+}
+
+#header {
+  background: hsla(0, 0%, 100%, .3);
+}
+
+input {
+  font-size: 16px;
+  border: 0;
+  background-color: rgb(12, 12, 11);
+  color: #fff;
+  border-radius: 10px;
+}
+
+#flower {
+  position: absolute;
+  left: 0%;
+  top: 90%;
+}
+
+.holes {
+  /* background: wheat; */
+  position: relative;
+}
+
+.bomb {
+  width: 100px;
+  float: right;
+  position: relative;
+}
+
+.bomb img {
+  width: 100%;
+}
+
+.bomb span {
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.zombie1 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(./images/報紙.gif);
+  background-size: 213px 195px;
+}
+
+.zombie11 {
+  animation: zombie11 30s forwards;
+}
+
+
+@keyframes zombie11 {
+  from {
+    left: 0%
+  }
+
+  to {
+    left: -130%;
+  }
+}
+
+.zombie2 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(./images/三角錐.gif);
+  background-size: 262px 331px;
+}
+
+.zombie22 {
+  animation: zombie22 30s forwards;
+}
+
+@keyframes zombie22 {
+  from {
+    left: 0%
+  }
+
+  to {
+    left: -90%;
+  }
+}
+
+.zombie3 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(./images/小人.gif);
+  background-size: 207px 250px;
+}
+
+.zombie33 {
+  animation: zombie33 30s forwards;
+}
+
+@keyframes zombie33 {
+  from {
+    left: 0%
+  }
+
+  to {
+    left: -120%;
+  }
+}
+
+.zombie4 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(./images/巨人.gif);
+  background-size: 171px 315px;
+}
+
+.zombie44 {
+  animation: zombie44 30s forwards;
+}
+
+@keyframes zombie44 {
+  from {
+    left: 0%
+  }
+
+  to {
+    left: -90%;
+  }
+}
+
+.zombie5 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(./images/氣球.gif);
+  background-size: 272px 333px;
+  animation: zombie5 30s forwards infinite;
+}
+
+@keyframes zombie5 {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-1000px);
+  }
+}
+
+.sun {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(./images/sun.png);
+  background-size: 50px 50px;
+  animation: sun 1s forwards;
+}
+
+.pow {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(./images/POW.png);
+  background-size: 50px 50px;
+  animation: sun 1s forwards;
+}
+
+@keyframes sun {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+}
