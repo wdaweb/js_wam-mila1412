@@ -59,8 +59,6 @@
   </div>
 
   <input type="button" value="Start" id="btn-start">
-  <br>
-  <br>
   <span id="header">
     <img src="./images/sun.png" width="25px">目前分數: <span id="text-score"></span>
     <br>
@@ -116,27 +114,27 @@
     }
 
     const game = () => {
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 5; i++) {
         const random = Math.floor(Math.random() * 28)
         holes[random].classList.add('zombie1')
         holes[random].classList.add('zombie11')
       }
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 4; i++) {
         const random = Math.floor(Math.random() * 28)
         holes[random].classList.add('zombie2')
         holes[random].classList.add('zombie22')
       }
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 5; i++) {
         const random = Math.floor(Math.random() * 28)
         holes[random].classList.add('zombie3')
         holes[random].classList.add('zombie33')
       }
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 4; i++) {
         const random = Math.floor(Math.random() * 28)
         holes[random].classList.add('zombie4')
         holes[random].classList.add('zombie44')
       }
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 4; i++) {
         const random = Math.floor(Math.random() * 28)
         holes[random].classList.add('zombie5')
       }
@@ -146,7 +144,8 @@
       for (let hole of holes) {
         // container.style.borderLeftWidth 抓不到?
         // 改成百分比比較好
-        if (hole.offsetLeft == 300) {
+        // 原本設==300，但這樣錯過那次就抓不到了！！
+        if (hole.offsetLeft <= 300) {
           clearInterval(timer)
           clearInterval(timer2)
           clearInterval(timer3)
@@ -155,6 +154,7 @@
             title: '殭屍大軍入侵！！！',
             text: `你得到 ${score} 分`
           })
+          btnStart.disabled = false
           for (let hole of holes) {
             hole.classList.remove('zombie1')
             hole.classList.remove('zombie2')
@@ -166,6 +166,7 @@
             hole.classList.remove('zombie33')
             hole.classList.remove('zombie44')
           }
+
         }
       }
     }
