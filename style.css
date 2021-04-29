@@ -1,4 +1,6 @@
 body {
+  /* 沒有設0會有捲軸 */
+  margin: 0;
   font-family: 'New Tegomin', serif;
   background-image: url(./images/背景4.jpg);
   background-repeat: no-repeat;
@@ -13,24 +15,33 @@ body {
   cursor: url(./images/木槌.png) 50 50, auto;
   /* background: cadetblue; */
   position: absolute;
-  top: 10%;
+  top: 0%;
   /* border-left-width: 200px; */
   width: 100%;
   height: 100%;
 }
 
 table {
-  /* position: absolute; */
+  position: absolute;
+  top: 10%;
   padding-left: 700px;
   height: 90%;
   width: 100%;
 }
 
 #header {
-  background: hsla(0, 0%, 100%, .3);
+  position: absolute;
+  top: 5%;
+  left: 0.5%;
+  background: hsla(0, 0%, 100%, 0.5);
+  border-radius: 10px;
 }
 
 input {
+  position: absolute;
+  top: 1%;
+  left: 0.5%;
+  z-index: 1;
   font-size: 16px;
   border: 0;
   background-color: rgb(12, 12, 11);
@@ -41,7 +52,7 @@ input {
 #flower {
   position: absolute;
   left: 0%;
-  top: 90%;
+  top: 86%;
 }
 
 .holes {
@@ -79,10 +90,9 @@ input {
   animation: zombie11 30s forwards;
 }
 
-
 @keyframes zombie11 {
   from {
-    left: 0%
+    left: 0%;
   }
 
   to {
@@ -103,7 +113,7 @@ input {
 
 @keyframes zombie22 {
   from {
-    left: 0%
+    left: 0%;
   }
 
   to {
@@ -124,7 +134,7 @@ input {
 
 @keyframes zombie33 {
   from {
-    left: 0%
+    left: 0%;
   }
 
   to {
@@ -145,7 +155,7 @@ input {
 
 @keyframes zombie44 {
   from {
-    left: 0%
+    left: 0%;
   }
 
   to {
