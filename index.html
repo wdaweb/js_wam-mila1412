@@ -109,7 +109,7 @@
       dead()
       timer = setInterval(end, 1000)
       end()
-      timer2 = setInterval(game, 8000)
+      timer2 = setInterval(game, 6000)
       game()
     }
 
@@ -119,7 +119,7 @@
         holes[random].classList.add('zombie1')
         holes[random].classList.add('zombie11')
       }
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 5; i++) {
         const random = Math.floor(Math.random() * 28)
         holes[random].classList.add('zombie2')
         holes[random].classList.add('zombie22')
@@ -129,12 +129,12 @@
         holes[random].classList.add('zombie3')
         holes[random].classList.add('zombie33')
       }
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 5; i++) {
         const random = Math.floor(Math.random() * 28)
         holes[random].classList.add('zombie4')
         holes[random].classList.add('zombie44')
       }
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 5; i++) {
         const random = Math.floor(Math.random() * 28)
         holes[random].classList.add('zombie5')
       }

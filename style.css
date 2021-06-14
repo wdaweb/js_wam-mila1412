@@ -29,10 +29,12 @@ table {
   width: 100%;
 }
 
+/* 毛玻璃 */
 #header {
   position: absolute;
   top: 5%;
   left: 0.5%;
+  padding: 5px;
   background: hsla(0, 0%, 100%, 0.5);
   border-radius: 10px;
 }
@@ -96,7 +98,7 @@ input {
   }
 
   to {
-    left: -200%;
+    left: -900%;
   }
 }
 
@@ -117,7 +119,7 @@ input {
   }
 
   to {
-    left: -100%;
+    left: -400%;
   }
 }
 
@@ -138,7 +140,7 @@ input {
   }
 
   to {
-    left: -180%;
+    left: -600%;
   }
 }
 
@@ -159,7 +161,7 @@ input {
   }
 
   to {
-    left: -100%;
+    left: -400%;
   }
 }
 
