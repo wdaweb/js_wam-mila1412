@@ -166,7 +166,6 @@
             hole.classList.remove('zombie33')
             hole.classList.remove('zombie44')
           }
-
         }
       }
     }
@@ -214,7 +213,8 @@
     for (let hole of holes) {
       hole.onmousedown = () => {
         container.style.cursor = 'url(./images/木槌2.png) 50 50, auto'
-        // 清除太陽才不會佔到殭屍的格子
+        // replace的東西都要清除掉
+        // 清除太陽跟pow才不會佔到殭屍的格子
         setTimeout(() => {
           hole.classList.remove('sun')
           hole.classList.remove('pow')
