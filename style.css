@@ -54,7 +54,7 @@ input {
 #flower {
   position: absolute;
   left: 0%;
-  top: 86%;
+  top: 78%;
 }
 
 .holes {
@@ -85,7 +85,7 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(./images/報紙.gif);
-  background-size: 213px 195px;
+  background-size: 128px 130px;
 }
 
 .zombie11 {
@@ -106,7 +106,7 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(./images/三角錐.gif);
-  background-size: 262px 331px;
+  background-size: 167px 196px;
 }
 
 .zombie22 {
@@ -127,7 +127,7 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(./images/小人.gif);
-  background-size: 207px 250px;
+  background-size: 128px 147px;
 }
 
 .zombie33 {
@@ -148,7 +148,7 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(./images/巨人.gif);
-  background-size: 171px 315px;
+  background-size: 86px 170px;
 }
 
 .zombie44 {
@@ -169,7 +169,7 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(./images/氣球.gif);
-  background-size: 272px 333px;
+  background-size: 167px 196px;
   animation: zombie5 30s forwards infinite;
 }
 

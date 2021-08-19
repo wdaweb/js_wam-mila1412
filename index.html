@@ -90,7 +90,7 @@
     let timer3 = 0
     let countdown = 30
     let highscore = { name: '', score: 0 }
-    const highStorage = JSON.parse(localStorage.getItem('wam'))
+    const highStorage = JSON.parse(localStorage.getItem('wam100'))
     if (highStorage !== null) {
       highscore = highStorage
       textHighscorePlayer.innerText = highscore.name
@@ -144,8 +144,8 @@
       for (let hole of holes) {
         // container.style.borderLeftWidth 抓不到?
         // 改成百分比比較好
-        // 原本設==300，但這樣錯過那次就抓不到了！！
-        if (hole.offsetLeft <= 300) {
+        // 原本設==200，但這樣錯過那次就抓不到了！！
+        if (hole.offsetLeft <= 200) {
           clearInterval(timer)
           clearInterval(timer2)
           clearInterval(timer3)
@@ -194,7 +194,8 @@
           hole.classList.remove('zombie33')
           hole.classList.remove('zombie44')
         }
-
+        
+        // 倒數結束才會統計最高分
         if (score > highscore.score) {
           audio.play()
           highscore.score = score
@@ -204,7 +205,7 @@
           }
           textHighscorePlayer.innerText = highscore.name
           textHighscore.innerText = highscore.score
-          localStorage.setItem('wam', JSON.stringify(highscore))
+          localStorage.setItem('wam100', JSON.stringify(highscore))
         }
       }
     }
@@ -236,9 +237,11 @@
           hole.classList.replace('zombie4', 'sun')
           hole.classList.replace('zombie44', 'pow')
           score++
-        } else {
+        } else if (hole.classList.contains('zombie5')) {
           hole.classList.replace('zombie5', 'sun')
           score++
+        } else {
+          textScore.innerText = score
         }
         textScore.innerText = score
       }
